@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\workspace\\ApiTarefas\\ApiTarefas.csproj": {}
+    "D:\\workspace\\ApiTarefas\\ApiTarefas.csproj": {}
   },
   "projects": {
-    "d:\\workspace\\ApiTarefas\\ApiTarefas.csproj": {
+    "D:\\workspace\\ApiTarefas\\ApiTarefas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\workspace\\ApiTarefas\\ApiTarefas.csproj",
+        "projectUniqueName": "D:\\workspace\\ApiTarefas\\ApiTarefas.csproj",
         "projectName": "ApiTarefas",
-        "projectPath": "d:\\workspace\\ApiTarefas\\ApiTarefas.csproj",
+        "projectPath": "D:\\workspace\\ApiTarefas\\ApiTarefas.csproj",
         "packagesPath": "C:\\Users\\Nano\\.nuget\\packages\\",
-        "outputPath": "d:\\workspace\\ApiTarefas\\obj\\",
+        "outputPath": "D:\\workspace\\ApiTarefas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nano\\AppData\\Roaming\\NuGet\\NuGet.Config"
