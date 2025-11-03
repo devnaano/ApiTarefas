@@ -54,7 +54,7 @@ namespace ApiTarefas.Models
             return (int)novoStatus > (int)Status;
         }
 
-        public void AlteraraStatus(StatusTarefa novoStatus)
+        public void AlterarStatus(StatusTarefa novoStatus)
         {
             if (!PodeAlterarPara(novoStatus))
                 throw new InvalidOperationException($"Não é permidito alterar de {Status} para {novoStatus}");
