@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiTarefas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76d56eff236b783096eb2ac4dfdfa103d1bcb7e5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2850baf75f18d030b7d7089776a2351a2f9f5646")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiTarefas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiTarefas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
