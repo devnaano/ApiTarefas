@@ -38,7 +38,7 @@ namespace ApiTarefas.Repositories
                 .FirstOrDefaultAsync(t => t.Id == id);
         }
 
-        public async Task EditarAsync(Tarefa tarefa)
+        public async Task AtualizarAsync(Tarefa tarefa)
         {
             _context.Tarefas.Update(tarefa);
             await _context.SaveChangesAsync();

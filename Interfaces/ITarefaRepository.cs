@@ -12,7 +12,7 @@ namespace ApiTarefas.Interfaces
         Task<IEnumerable<Tarefa>> PegarTodasAsync();
         Task<Tarefa?> PegarPorIdAsync(int id);
         Task CriarAsync(Tarefa tarefa);
-        Task EditarAsync(Tarefa tarefa);
+        Task AtualizarAsync(Tarefa tarefa);
         Task RemoverAsync(Tarefa tarefa);
 
 

@@ -21,9 +21,9 @@ namespace ApiTarefas.Models
             if (string.IsNullOrWhiteSpace(titulo))
                 throw new ArgumentException("Título da tarefa é obrigatório.");
             if (titulo.Length > 100)
-                throw new ArgumentException("Título deve ter no máximo 100 caracteres.");
+                throw new InvalidOperationException("Título deve ter no máximo 100 caracteres.");
             if (descricao?.Length > 500)
-                throw new ArgumentException("Descrição deve ter no máximo 500 caracteres.");
+                throw new KeyNotFoundException("Descrição deve ter no máximo 500 caracteres.");
 
             Titulo = titulo;
             Descricao = descricao ?? string.Empty;
@@ -40,7 +40,7 @@ namespace ApiTarefas.Models
             DataConclusao = DateTime.UtcNow;
         }
 
-        public void Atualizar(string titulo, string descricao)
+        public void Atualizar(string? titulo, string? descricao)
         {
             if (!string.IsNullOrWhiteSpace(titulo) && titulo.Length <= 100)
                 Titulo = titulo;

@@ -9,13 +9,14 @@ namespace ApiTarefas.Interfaces
 {
     public interface ITarefaService
     {
-        Task<TarefaDetalheDto> ObterPorIdAsync(int id);
-        Task<IEnumerable<TarefaResumoDto>> ObterPorStatusAsync(StatusTarefa status);
-        Task<IEnumerable<TarefaResumoDto>> ObterPorPeriodoAsync(DateTime dataInicio, DateTime dataFim);
+        Task<IEnumerable<TarefaResumoDto>> PegarTodasAsync();
+        Task<TarefaDetalheDto?> PegarPorIdAsync(int id);
+        Task<IEnumerable<TarefaResumoDto>> PegarPorStatusAsync(StatusTarefa status);
+        Task<IEnumerable<TarefaResumoDto>> PegarPorPeriodoAsync(DateTime dataInicio, DateTime dataFim);
         Task<TarefaDetalheDto> CriarAsync(CriarTarefaDto dto);
-        Task<TarefaDetalheDto> EditarAsync(int id, AtualizarTarefaDto dto);
+        Task<TarefaDetalheDto?> EditarAsync(int id, AtualizarTarefaDto dto);
+        Task<bool> RemoverAsync(int id);
         Task<bool> IniciarAsync(int id);
         Task<bool> ConcluirAsync(int id);
-        Task<bool> RemoverAsync(int id);
     }
 }
