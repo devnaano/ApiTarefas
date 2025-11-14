@@ -8,6 +8,7 @@ using ApiTarefas.Dtos.Tarefa;
 using ApiTarefas.Enums;
 using ApiTarefas.Interfaces;
 using ApiTarefas.Models;
+using ApiTarefas.Models.Exceptions;
 using Microsoft.EntityFrameworkCore.Storage.Json;
 
 namespace ApiTarefas.Services
@@ -102,7 +103,7 @@ namespace ApiTarefas.Services
             if (tarefa is null) return null;
 
             if (tarefa.Status == StatusTarefa.Concluida)
-                throw new InvalidOperationException("Não é possível editar uma tarefa concluída.");
+                throw new RegraDeNegocioException("Não é possível editar uma tarefa concluída.");
 
             tarefa.Atualizar(dto.Titulo, dto.Descricao);
             await _tarefaRepository.AtualizarAsync(tarefa);
@@ -124,7 +125,7 @@ namespace ApiTarefas.Services
             if (tarefa == null) return false;
 
             if (!tarefa.PodeExcluir())
-                throw new InvalidOperationException("Não é possível remover uma tarefa concluída.");
+                throw new RegraDeNegocioException("Não é possível remover uma tarefa concluída.");
 
             await _tarefaRepository.RemoverAsync(tarefa);
             return true;
