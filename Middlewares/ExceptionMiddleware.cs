@@ -38,15 +38,14 @@ namespace ApiTarefas.Middlewares
             var statusCode = ex switch
             {
                 RegraDeNegocioException => HttpStatusCode.BadRequest,
-                InvalidOperationException => HttpStatusCode.BadRequest,
-                KeyNotFoundException => HttpStatusCode.NotFound,
+                NotFoundException => HttpStatusCode.NotFound,
                 _ => HttpStatusCode.InternalServerError
             };
 
             string mensagem = ex switch
             {
-                RegraDeNegocioException or InvalidOperationException => ex.Message,
-                KeyNotFoundException => "Recurso não encontrado.",
+                RegraDeNegocioException => ex.Message,
+                NotFoundException => ex.Message,
                 _ => "Ocorreu um erro interno no servidor."
             };
 

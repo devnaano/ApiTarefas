@@ -15,8 +15,8 @@ namespace ApiTarefas.Interfaces
         Task<IEnumerable<TarefaResumoDto>> PegarPorPeriodoAsync(DateTime dataInicio, DateTime dataFim);
         Task<TarefaDetalheDto> CriarAsync(CriarTarefaDto dto);
         Task<TarefaDetalheDto?> EditarAsync(int id, AtualizarTarefaDto dto);
-        Task<bool> RemoverAsync(int id);
-        Task<bool> IniciarAsync(int id);
-        Task<bool> ConcluirAsync(int id);
+        Task RemoverAsync(int id);
+        Task IniciarAsync(int id);
+        Task ConcluirAsync(int id);
     }
 }

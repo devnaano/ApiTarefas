@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Formats.Asn1;
-using System.Linq;
-using System.Threading.Tasks;
 using ApiTarefas.Dtos.Tarefa;
 using ApiTarefas.Enums;
 using ApiTarefas.Interfaces;
@@ -32,8 +27,6 @@ namespace ApiTarefas.Controllers
         public async Task<IActionResult> PegarPorId(int id)
         {
             var tarefa = await _tarefaService.PegarPorIdAsync(id);
-            if (tarefa == null) return NotFound();
-
             return Ok(tarefa);
         }
 
@@ -65,8 +58,6 @@ namespace ApiTarefas.Controllers
         public async Task<IActionResult> Atualizar(int id, [FromBody] AtualizarTarefaDto dto)
         {
             var tarefa = await _tarefaService.EditarAsync(id, dto);
-            if (tarefa == null) return NotFound();
-
             return Ok(tarefa);
         }
 

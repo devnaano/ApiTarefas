@@ -1,4 +1,5 @@
 using ApiTarefas.Interfaces;
+using ApiTarefas.Middlewares;
 using ApiTarefas.Repositories;
 using ApiTarefas.Repositories.Context;
 using ApiTarefas.Services;
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
@@ -24,9 +26,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseMiddleware<ApiTarefas.Middlewares.ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseAuthorization();
 
